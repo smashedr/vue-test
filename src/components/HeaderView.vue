@@ -8,9 +8,9 @@ import { SETTINGS } from '@/config/settings.ts'
 <template>
   <nav aria-label="Primary Navigation" class="navbar navbar-expand-sm bg-body-tertiary mb-2">
     <div class="container-fluid">
-      <a class="px-2" href="/">
+      <RouterLink to="/" class="px-2">
         <img alt="logo" src="/src/assets/logo.png" width="30" height="30" class="my-auto"
-      /></a>
+      /></RouterLink>
       <button
         class="navbar-toggler"
         type="button"
@@ -29,9 +29,6 @@ import { SETTINGS } from '@/config/settings.ts'
             <RouterLink :to="path" class="nav-link" active-class="active">{{
               meta?.name
             }}</RouterLink>
-            <!--<a class="nav-link" :href="link"-->
-            <!--  >{{ name }} <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i-->
-            <!--&gt;</a>-->
           </li>
         </ul>
         <ul class="navbar-nav nav-icons d-flex flex-row">
