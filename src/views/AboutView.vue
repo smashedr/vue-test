@@ -1,0 +1,234 @@
+<script setup lang="ts">
+import { SETTINGS } from '@/config/settings.ts'
+</script>
+
+<template>
+  <div class="container-fluid">
+    <h1 class="animate__animated animate__zoomIn">
+      <i class="fa-regular fa-address-card me-2"></i> About
+    </h1>
+
+    <div
+      class="d-flex flex-column flex-wrap flex-sm-row align-items-start"
+      style="min-height: 24px"
+    >
+      <a :href="SETTINGS.github" class="me-2 mb-1" target="_blank" rel="noopener">
+        <img
+          alt="GitHub Org Stars"
+          src="https://img.shields.io/github/stars/cssnr?label=Org%20Stars"
+          height="24"
+      /></a>
+      <a
+        href="https://github.com/orgs/cssnr/followers"
+        class="me-2 mb-1"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          alt="GitHub Org Followers"
+          src="https://img.shields.io/github/followers/cssnr?label=Org%20Followers"
+          height="24"
+      /></a>
+
+      <a href="https://github.com/smashedr" class="me-2 mb-1" target="_blank" rel="noopener">
+        <img
+          alt="GitHub User Stars"
+          src="https://img.shields.io/github/stars/smashedr?label=User%20Stars"
+          height="24"
+      /></a>
+      <a
+        href="https://github.com/smashedr?tab=followers"
+        class="me-2 mb-1"
+        target="_blank"
+        rel="noopener"
+      >
+        <img
+          alt="GitHub User Followers"
+          src="https://img.shields.io/github/followers/smashedr?label=User%20Followers"
+          height="24"
+      /></a>
+    </div>
+
+    <hr />
+
+    <figure>
+      <blockquote class="blockquote">
+        Give a man a fish, and you feed him for a day. Teach a man to fish, and you feed him for a
+        lifetime...
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Lao-Tzu in <cite title="Source Title">Tao Te Ching</cite>
+      </figcaption>
+    </figure>
+
+    <div class="d-flex flex-column flex-md-row">
+      <div class="me-md-3 mb-2 mb-md-0">
+        <a
+          href="https://github.com/smashedr"
+          class="text-decoration-none"
+          target="_blank"
+          rel="noopener"
+        >
+          <picture>
+            <source
+              srcset="
+                https://github-readme-stats.cssnr.com/?username=smashedr&theme=dark&show_icons=true&hide_rank=true&show=reviews&card_width=350
+              "
+              media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
+            />
+            <source
+              srcset="
+                https://github-readme-stats.cssnr.com/?username=smashedr&theme=default&show_icons=true&hide_rank=true&show=reviews&card_width=350
+              "
+              media="(prefers-color-scheme: light)"
+            />
+            <img
+              alt="GitHub Stats Dynamic Display"
+              class="img-fluid"
+              src="https://github-readme-stats.cssnr.com/?username=smashedr&show_icons=true&hide_rank=true&show=reviews&card_width=350"
+            />
+          </picture>
+        </a>
+      </div>
+      <!-- flex item -->
+      <div class="me-md-3">
+        <a
+          href="https://github.com/smashedr"
+          class="text-decoration-none"
+          target="_blank"
+          rel="noopener"
+        >
+          <picture>
+            <source
+              srcset="
+                https://github-readme-stats.cssnr.com/top-langs/?username=smashedr&theme=dark&layout=donut
+              "
+              media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
+            />
+            <source
+              srcset="
+                https://github-readme-stats.cssnr.com/top-langs/?username=smashedr&theme=default&layout=donut
+              "
+              media="(prefers-color-scheme: light)"
+            />
+            <img
+              alt="Top Languages Dynamic Display"
+              class="img-fluid"
+              src="https://github-readme-stats.cssnr.com/top-langs/?username=smashedr&layout=donut"
+            />
+          </picture>
+        </a>
+      </div>
+      <!-- flex item -->
+    </div>
+    <!-- flex row-md -->
+
+    <p class="fst-italic">
+      Note: These stats only include personal repositories; however, most my work is done in the
+      <a href="{{ site.github_url }}" target="_blank" rel="noopener">CSSNR Organization</a>.
+    </p>
+
+    <div class="d-flex flex-column flex-md-row">
+      <div class="me-md-5">
+        <h2>Links</h2>
+        <ul class="list-unstyled ms-3">
+          <li>
+            <i class="fa-brands fa-github me-2"></i>
+            <a href="{{ site.github_url }}" target="_blank" rel="noopener">CSSNR GitHub</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-github me-2"></i>
+            <a href="https://github.com/django-files" target="_blank" rel="noopener"
+              >Django Files GitHub</a
+            >
+          </li>
+          <li>
+            <i class="fa-brands fa-github me-2"></i>
+            <a href="https://github.com/smashedr" target="_blank" rel="noopener">Personal GitHub</a>
+          </li>
+        </ul>
+        <ul class="list-unstyled ms-3">
+          <li>
+            <i class="fa-brands fa-discord me-2"></i>
+            <a href="https://discord.gg/wXy6m2X8wY" target="_blank" rel="noopener">CSSNR Discord</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-discord me-2"></i>
+            <a href="https://discord.gg/6pzXJE5" target="_blank" rel="noopener"
+              >SMWC.world Discord</a
+            >
+          </li>
+        </ul>
+        <ul class="list-unstyled ms-3">
+          <li>
+            <i class="fa-brands fa-firefox-browser me-2"></i>
+            <a
+              href="https://addons.mozilla.org/en-US/firefox/user/18021912/"
+              target="_blank"
+              rel="noopener"
+              >Mozilla Profile</a
+            >
+          </li>
+          <li>
+            <i class="fa-brands fa-google-play me-2"></i>
+            <a
+              href="https://play.google.com/store/apps/dev?id=8933468453824534870"
+              target="_blank"
+              rel="noopener"
+              >Google Play Profile</a
+            >
+          </li>
+          <li>
+            <i class="fa-brands fa-npm me-2"></i>
+            <a href="https://www.npmjs.com/~smashed" target="_blank" rel="noopener">NPM Profile</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-python me-2"></i>
+            <a href="https://pypi.org/user/smashed/" target="_blank" rel="noopener">PyPi Profile</a>
+          </li>
+        </ul>
+      </div>
+      <!-- flex item -->
+
+      <div class="me-md-5">
+        <h2>Development</h2>
+        <ul>
+          <li>Web Extensions</li>
+          <li>GitHub Actions</li>
+          <li>Docker Containers</li>
+          <li>Django Applications</li>
+          <li>Mobile Applications</li>
+          <li>NPM/Python Packages</li>
+        </ul>
+      </div>
+      <!-- flex item -->
+    </div>
+    <!-- flex row-md -->
+
+    <h1>Support</h1>
+    <p>Please consider making a donation to support this development...</p>
+    <a :href="SETTINGS.kofi" target="_blank" rel="noopener">
+      <img
+        alt="Support on Ko-fi"
+        class="img-fluid hvr-grow"
+        style="max-height: 64px"
+        src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a01c01ea9191809398c_support_me_on_kofi_blue.png"
+      />
+    </a>
+
+    <p class="lead mt-3">More Information Coming Soon...</p>
+
+    <hr />
+
+    <p>
+      This site is built with Jekyll and hosted on GitHub Pages.
+      <br />
+      View the source code on GitHub:
+      <a :href="SETTINGS.github + '/cssnr.github.io'" target="_blank" rel="noopener">
+        {{ SETTINGS.github + '/cssnr.github.io' }}</a
+      >
+    </p>
+  </div>
+</template>
+
+<!--<style scoped></style>-->
