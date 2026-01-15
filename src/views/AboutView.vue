@@ -224,9 +224,7 @@ import { SETTINGS } from '@/config/settings.ts'
       This site is built with Jekyll and hosted on GitHub Pages.
       <br />
       View the source code on GitHub:
-      <a :href="SETTINGS.github + '/cssnr.github.io'" target="_blank" rel="noopener">
-        {{ SETTINGS.github + '/cssnr.github.io' }}</a
-      >
+      <a :href="SETTINGS.github" target="_blank" rel="noopener"> {{ SETTINGS.github }}</a>
     </p>
   </div>
 </template>

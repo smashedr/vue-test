@@ -15,7 +15,7 @@ import { SETTINGS } from '@/config/settings.ts'
             target="_blank"
             rel="noopener"
           >
-            <i class="fab fa-github"></i> CSSNR</a
+            <i class="fab fa-github"></i> GitHub</a
           >
         </div>
         <div>
