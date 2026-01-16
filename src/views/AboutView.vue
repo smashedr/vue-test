@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { SETTINGS } from '@/config/settings.ts'
+import { aboutBadges, aboutLinks } from '@/config/links.ts'
+import GHStatsCard from '@/components/GHStatsCard.vue'
 </script>
 
 <template>
@@ -12,40 +14,14 @@ import { SETTINGS } from '@/config/settings.ts'
       class="d-flex flex-column flex-wrap flex-sm-row align-items-start"
       style="min-height: 24px"
     >
-      <a :href="SETTINGS.github" class="me-2 mb-1" target="_blank" rel="noopener">
-        <img
-          alt="GitHub Org Stars"
-          src="https://img.shields.io/github/stars/cssnr?label=Org%20Stars"
-          height="24"
-      /></a>
       <a
-        href="https://github.com/orgs/cssnr/followers"
+        v-for="{ alt, href, src } in aboutBadges"
+        :href="href"
         class="me-2 mb-1"
         target="_blank"
         rel="noopener"
       >
-        <img
-          alt="GitHub Org Followers"
-          src="https://img.shields.io/github/followers/cssnr?label=Org%20Followers"
-          height="24"
-      /></a>
-
-      <a href="https://github.com/smashedr" class="me-2 mb-1" target="_blank" rel="noopener">
-        <img
-          alt="GitHub User Stars"
-          src="https://img.shields.io/github/stars/smashedr?label=User%20Stars"
-          height="24"
-      /></a>
-      <a
-        href="https://github.com/smashedr?tab=followers"
-        class="me-2 mb-1"
-        target="_blank"
-        rel="noopener"
-      >
-        <img
-          alt="GitHub User Followers"
-          src="https://img.shields.io/github/followers/smashedr?label=User%20Followers"
-          height="24"
+        <img :alt="alt" :src="src" height="24"
       /></a>
     </div>
 
@@ -63,132 +39,34 @@ import { SETTINGS } from '@/config/settings.ts'
 
     <div class="d-flex flex-column flex-md-row">
       <div class="me-md-3 mb-2 mb-md-0">
-        <a
+        <GHStatsCard
           href="https://github.com/smashedr"
-          class="text-decoration-none"
-          target="_blank"
-          rel="noopener"
-        >
-          <picture>
-            <source
-              srcset="
-                https://github-readme-stats.cssnr.com/?username=smashedr&theme=dark&show_icons=true&hide_rank=true&show=reviews&card_width=350
-              "
-              media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
-            />
-            <source
-              srcset="
-                https://github-readme-stats.cssnr.com/?username=smashedr&theme=default&show_icons=true&hide_rank=true&show=reviews&card_width=350
-              "
-              media="(prefers-color-scheme: light)"
-            />
-            <img
-              alt="GitHub Stats Dynamic Display"
-              class="img-fluid"
-              src="https://github-readme-stats.cssnr.com/?username=smashedr&show_icons=true&hide_rank=true&show=reviews&card_width=350"
-            />
-          </picture>
-        </a>
+          src="https://github-readme-stats.cssnr.com/?username=smashedr&show_icons=true&hide_rank=true&show=reviews&card_width=350"
+        />
       </div>
-      <!-- flex item -->
       <div class="me-md-3">
-        <a
+        <GHStatsCard
           href="https://github.com/smashedr"
-          class="text-decoration-none"
-          target="_blank"
-          rel="noopener"
-        >
-          <picture>
-            <source
-              srcset="
-                https://github-readme-stats.cssnr.com/top-langs/?username=smashedr&theme=dark&layout=donut
-              "
-              media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
-            />
-            <source
-              srcset="
-                https://github-readme-stats.cssnr.com/top-langs/?username=smashedr&theme=default&layout=donut
-              "
-              media="(prefers-color-scheme: light)"
-            />
-            <img
-              alt="Top Languages Dynamic Display"
-              class="img-fluid"
-              src="https://github-readme-stats.cssnr.com/top-langs/?username=smashedr&layout=donut"
-            />
-          </picture>
-        </a>
+          src="https://github-readme-stats.cssnr.com/top-langs/?username=smashedr&layout=donut"
+        />
       </div>
-      <!-- flex item -->
     </div>
-    <!-- flex row-md -->
 
     <p class="fst-italic">
       Note: These stats only include personal repositories; however, most my work is done in the
-      <a href="{{ site.github_url }}" target="_blank" rel="noopener">CSSNR Organization</a>.
+      <a :href="SETTINGS.github" target="_blank" rel="noopener">CSSNR Organization</a>.
     </p>
 
     <div class="d-flex flex-column flex-md-row">
       <div class="me-md-5">
         <h2>Links</h2>
         <ul class="list-unstyled ms-3">
-          <li>
-            <i class="fa-brands fa-github me-2"></i>
-            <a href="{{ site.github_url }}" target="_blank" rel="noopener">CSSNR GitHub</a>
-          </li>
-          <li>
-            <i class="fa-brands fa-github me-2"></i>
-            <a href="https://github.com/django-files" target="_blank" rel="noopener"
-              >Django Files GitHub</a
-            >
-          </li>
-          <li>
-            <i class="fa-brands fa-github me-2"></i>
-            <a href="https://github.com/smashedr" target="_blank" rel="noopener">Personal GitHub</a>
-          </li>
-        </ul>
-        <ul class="list-unstyled ms-3">
-          <li>
-            <i class="fa-brands fa-discord me-2"></i>
-            <a href="https://discord.gg/wXy6m2X8wY" target="_blank" rel="noopener">CSSNR Discord</a>
-          </li>
-          <li>
-            <i class="fa-brands fa-discord me-2"></i>
-            <a href="https://discord.gg/6pzXJE5" target="_blank" rel="noopener"
-              >SMWC.world Discord</a
-            >
-          </li>
-        </ul>
-        <ul class="list-unstyled ms-3">
-          <li>
-            <i class="fa-brands fa-firefox-browser me-2"></i>
-            <a
-              href="https://addons.mozilla.org/en-US/firefox/user/18021912/"
-              target="_blank"
-              rel="noopener"
-              >Mozilla Profile</a
-            >
-          </li>
-          <li>
-            <i class="fa-brands fa-google-play me-2"></i>
-            <a
-              href="https://play.google.com/store/apps/dev?id=8933468453824534870"
-              target="_blank"
-              rel="noopener"
-              >Google Play Profile</a
-            >
-          </li>
-          <li>
-            <i class="fa-brands fa-npm me-2"></i>
-            <a href="https://www.npmjs.com/~smashed" target="_blank" rel="noopener">NPM Profile</a>
-          </li>
-          <li>
-            <i class="fa-brands fa-python me-2"></i>
-            <a href="https://pypi.org/user/smashed/" target="_blank" rel="noopener">PyPi Profile</a>
+          <li v-for="{ icon, text, href } in aboutLinks">
+            <i :class="icon" class="me-2"></i>
+            <a :href="href" target="_blank" rel="noopener">{{ text }}</a>
           </li>
         </ul>
       </div>
-      <!-- flex item -->
 
       <div class="me-md-5">
         <h2>Development</h2>
@@ -201,9 +79,7 @@ import { SETTINGS } from '@/config/settings.ts'
           <li>NPM/Python Packages</li>
         </ul>
       </div>
-      <!-- flex item -->
     </div>
-    <!-- flex row-md -->
 
     <h1>Support</h1>
     <p>Please consider making a donation to support this development...</p>
