@@ -1,5 +1,5 @@
 export const SETTINGS = {
-  discord: 'https://discord.gg/wXy6m2X8wY',
-  github: 'https://github.com/smashedr/vue-test',
-  kofi: 'https://ko-fi.com/cssnr',
+  discord: import.meta.env.VITE_DISCORD_URL,
+  github: import.meta.env.VITE_GITHUB_URL,
+  kofi: import.meta.env.VITE_KOFI_URL,
 } as const
