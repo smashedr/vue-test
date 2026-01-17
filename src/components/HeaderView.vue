@@ -3,12 +3,22 @@ import { RouterLink } from 'vue-router'
 import router from '../router/index.ts'
 import ThemeSwitch from '@/components/ThemeSwitch.vue'
 import { SETTINGS } from '@/config/settings.ts'
+
+import { ref } from 'vue'
+const navbarContent = ref<HTMLElement | null>(null)
+
+function closeMenu() {
+  console.log('navbarContent:', navbarContent)
+  const navbar = navbarContent?.value
+  console.log('el:', navbar)
+  navbar?.classList.remove('show')
+}
 </script>
 
 <template>
   <nav aria-label="Primary Navigation" class="navbar navbar-expand-sm bg-body-tertiary mb-2">
     <div class="container-fluid">
-      <RouterLink to="/" class="px-2">
+      <RouterLink to="/" class="px-2" :onclick="closeMenu">
         <img alt="logo" src="/src/assets/logo.png" width="30" height="30" class="my-auto"
       /></RouterLink>
       <button
@@ -23,10 +33,10 @@ import { SETTINGS } from '@/config/settings.ts'
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- main navigation -->
-      <div class="collapse navbar-collapse me-auto" id="navbarSupportedContent">
+      <div ref="navbarContent" class="collapse navbar-collapse me-auto" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item" v-for="{ meta, path } in router.options.routes" :key="path">
-            <RouterLink :to="path" class="nav-link" active-class="active">{{
+            <RouterLink :to="path" class="nav-link" active-class="active" :onclick="closeMenu">{{
               meta?.name
             }}</RouterLink>
           </li>
