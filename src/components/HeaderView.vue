@@ -1,17 +1,21 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import router from '../router/index.ts'
+import { Collapse } from 'bootstrap'
 import ThemeSwitch from '@/components/ThemeSwitch.vue'
 import { SETTINGS } from '@/config/settings.ts'
 
-import { ref } from 'vue'
 const navbarContent = ref<HTMLElement | null>(null)
 
 function closeMenu() {
   console.log('navbarContent:', navbarContent)
   const navbar = navbarContent?.value
   console.log('el:', navbar)
-  navbar?.classList.remove('show')
+  if (!navbar?.classList.contains('show')) return
+  const collapse = new Collapse(navbar)
+  console.log('collapse:', collapse)
+  collapse.hide()
 }
 </script>
 
