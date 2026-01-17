@@ -10,6 +10,7 @@ on:
       - "src/**"
       - "index.html"
       - "package*.json"
+      - "tsconfig.*"
 
 env:
   crawler-id: ""
