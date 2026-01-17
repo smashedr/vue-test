@@ -5,7 +5,7 @@ on:
   push:
     branches: [master]
     paths:
-      - ".github/workflows/preview.yaml"
+      - ".github/workflows/pages.yaml"
       - "public/**"
       - "src/**"
       - "index.html"
