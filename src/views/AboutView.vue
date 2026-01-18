@@ -16,6 +16,7 @@ import GHStatsCard from '@/components/GHStatsCard.vue'
     >
       <a
         v-for="{ alt, href, src } in aboutBadges"
+        :key="src"
         :href="href"
         class="me-2 mb-1"
         target="_blank"
@@ -61,7 +62,7 @@ import GHStatsCard from '@/components/GHStatsCard.vue'
       <div class="me-md-5">
         <h2>Links</h2>
         <ul class="list-unstyled ms-3">
-          <li v-for="{ icon, text, href } in aboutLinks">
+          <li v-for="{ icon, text, href } in aboutLinks" :key="icon">
             <i :class="icon" class="me-2"></i>
             <a :href="href" target="_blank" rel="noopener">{{ text }}</a>
           </li>
