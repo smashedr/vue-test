@@ -45,12 +45,12 @@ jobs:
         run: |
           npm run build
 
-      - name: "ESLint"
+      - name: "eslint"
         if: ${{ !cancelled() }}
         run: |
           npm run lint:check
 
-      - name: "Prettier Check"
+      - name: "prettier"
         if: ${{ !cancelled() }}
         run: |
           npm run prettier:check

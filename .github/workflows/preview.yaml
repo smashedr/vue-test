@@ -8,8 +8,9 @@ on:
       - ".github/workflows/preview.yaml"
       - "public/**"
       - "src/**"
-      - "index.html"
       - "package*.json"
+      - "tsconfig.*"
+      - "index.html"
       - "vite.config.ts"
 
 concurrency:

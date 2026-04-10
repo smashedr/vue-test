@@ -8,9 +8,10 @@ on:
       - ".github/workflows/pages.yaml"
       - "public/**"
       - "src/**"
-      - "index.html"
       - "package*.json"
       - "tsconfig.*"
+      - "index.html"
+      - "vite.config.ts"
 
 env:
   crawler-id: ""
@@ -53,17 +54,16 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: "Send Deploy Notification"
+      - name: "Send Discord Notification"
         if: ${{ !cancelled() }}
         continue-on-error: true
         uses: sarisia/actions-status-discord@eb045afee445dc055c18d3d90bd0f244fd062708 # v1.16.0
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          description: |
-            GitHub Pages Deployed: ${{ steps.deployment.outputs.page_url }}
+          description: ${{ steps.deployment.outputs.page_url }}
 
   post:
-    name: "Post-Deploy"
+    name: "Post"
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs: deploy
@@ -89,5 +89,4 @@ jobs:
         uses: sarisia/actions-status-discord@eb045afee445dc055c18d3d90bd0f244fd062708 # v1.16.0
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          description: |
-            GitHub Pages Deploy Failed: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
+          description: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
