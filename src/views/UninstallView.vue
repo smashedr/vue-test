@@ -14,10 +14,7 @@ console.log('version:', version)
 <template>
   <div class="container-fluid">
     <div class="d-flex align-items-center h-100">
-      <div
-        id="content-wrapper"
-        class="p-3 mb-3 mx-auto w-100 rounded rounded-3 animate__animated animate__backInDown"
-      >
+      <div id="content-wrapper" class="p-3 mb-3 mx-auto w-100 rounded rounded-3 animate__animated animate__backInDown">
         <div class="justify-content-center align-items-center d-flex">
           <img src="" class="img-fluid float-start me-2" alt="VT" height="42" width="42" />
           <h1 class="align-middle mb-0">{{ site.site_name }}</h1>
@@ -41,21 +38,11 @@ console.log('version:', version)
               >Feature Requests</a
             >
             are appreciated. Support is also available on
-            <a class="body-link" :href="site.discord_invite" target="_blank" rel="noopener"
-              >Discord</a
-            >.
+            <a class="body-link" :href="site.discord_invite" target="_blank" rel="noopener">Discord</a>.
           </p>
-          <a
-            href="https://ko-fi.com/cssnr"
-            class="text-decoration-none"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://ko-fi.com/cssnr" class="text-decoration-none" target="_blank" rel="noopener">
             <picture>
-              <source
-                srcset=""
-                media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)"
-              />
+              <source srcset="" media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)" />
               <source srcset="" media="(prefers-color-scheme: light)" />
               <img alt="Support on Ko-fi" class="mb-1" height="36" src="" />
             </picture>
@@ -65,21 +52,15 @@ console.log('version:', version)
           <input type="hidden" :value="site.relay_url" id="relay-url" hidden="hidden" />
           <div class="form-check form-switch fs-5">
             <input class="form-check-input" type="checkbox" role="switch" id="not-used" />
-            <label class="form-check-label text-success-emphasis" for="not-used"
-              >Do Not Need or Not Used</label
-            >
+            <label class="form-check-label text-success-emphasis" for="not-used">Do Not Need or Not Used</label>
           </div>
           <div class="form-check form-switch fs-5">
             <input class="form-check-input" type="checkbox" role="switch" id="not-expected" />
-            <label class="form-check-label text-warning-emphasis" for="not-expected"
-              >Does Not Work as Expected</label
-            >
+            <label class="form-check-label text-warning-emphasis" for="not-expected">Does Not Work as Expected</label>
           </div>
           <div class="form-check form-switch fs-5">
             <input class="form-check-input" type="checkbox" role="switch" id="not-working" />
-            <label class="form-check-label text-danger-emphasis" for="not-working"
-              >Not Working or Broken</label
-            >
+            <label class="form-check-label text-danger-emphasis" for="not-working">Not Working or Broken</label>
           </div>
           <div
             id="not-working-alert"
@@ -97,9 +78,7 @@ console.log('version:', version)
               placeholder="Optional Feedback, Bugs, Missing Features, etc..."
               autofocus
             ></textarea>
-            <span id="inputCounter" class="float-end label label-default"
-              ><span id="input-count">0</span> / 1000</span
-            >
+            <span id="inputCounter" class="float-end label label-default"><span id="input-count">0</span> / 1000</span>
           </div>
           <button id="submit-btn" class="btn btn-success w-100" type="submit">
             Submit Feedback <i class="fa-regular fa-comment-dots ms-2"></i>

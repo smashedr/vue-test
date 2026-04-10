@@ -6,14 +6,9 @@ import GHStatsCard from '@/components/GHStatsCard.vue'
 
 <template>
   <div class="container-fluid">
-    <h1 class="animate__animated animate__zoomIn">
-      <i class="fa-regular fa-address-card me-2"></i> About
-    </h1>
+    <h1 class="animate__animated animate__zoomIn"><i class="fa-regular fa-address-card me-2"></i> About</h1>
 
-    <div
-      class="d-flex flex-column flex-wrap flex-sm-row align-items-start"
-      style="min-height: 24px"
-    >
+    <div class="d-flex flex-column flex-wrap flex-sm-row align-items-start" style="min-height: 24px">
       <a
         v-for="{ alt, href, src } in aboutBadges"
         :key="src"
@@ -30,12 +25,9 @@ import GHStatsCard from '@/components/GHStatsCard.vue'
 
     <figure>
       <blockquote class="blockquote">
-        Give a man a fish, and you feed him for a day. Teach a man to fish, and you feed him for a
-        lifetime...
+        Give a man a fish, and you feed him for a day. Teach a man to fish, and you feed him for a lifetime...
       </blockquote>
-      <figcaption class="blockquote-footer">
-        Lao-Tzu in <cite title="Source Title">Tao Te Ching</cite>
-      </figcaption>
+      <figcaption class="blockquote-footer">Lao-Tzu in <cite title="Source Title">Tao Te Ching</cite></figcaption>
     </figure>
 
     <div class="d-flex flex-column flex-md-row">
