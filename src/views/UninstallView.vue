@@ -1,0 +1,98 @@
+<script setup lang="ts">
+const site = {
+  site_name: 'Vyou Test',
+  github_url: 'https://github.com/smashedr/vue-test',
+  discord_invite: '',
+  relay_url: 'https://github.com/smashedr/vue-test',
+}
+const url = new URL(window.location.href)
+console.log('url:', url)
+const version = url.searchParams.get('version') || 'unknown'
+console.log('version:', version)
+</script>
+
+<template>
+  <div class="container-fluid">
+    <div class="d-flex align-items-center h-100">
+      <div id="content-wrapper" class="p-3 mb-3 mx-auto w-100 rounded rounded-3 animate__animated animate__backInDown">
+        <div class="justify-content-center align-items-center d-flex">
+          <img src="" class="img-fluid float-start me-2" alt="VT" height="42" width="42" />
+          <h1 class="align-middle mb-0">{{ site.site_name }}</h1>
+        </div>
+        <div class="text-center">
+          <p class="mb-0">Please let us know why you uninstalled {{ site.site_name }}.</p>
+          <p id="bug-report" class="mb-1 fs-3 animate__animated animate__delay-1s">
+            All
+            <a class="body-link" :href="`${site.github_url}/issues`" target="_blank" rel="noopener"
+              >bugs that get reported</a
+            >
+            <span class="d-inline-block fw-bold">will be fixed!</span>
+          </p>
+          <p class="mb-2">
+            Any
+            <a
+              class="body-link"
+              :href="`${site.github_url}/discussions/categories/feature-requests`"
+              target="_blank"
+              rel="noopener"
+              >Feature Requests</a
+            >
+            are appreciated. Support is also available on
+            <a class="body-link" :href="site.discord_invite" target="_blank" rel="noopener">Discord</a>.
+          </p>
+          <a href="https://ko-fi.com/cssnr" class="text-decoration-none" target="_blank" rel="noopener">
+            <picture>
+              <source srcset="" media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)" />
+              <source srcset="" media="(prefers-color-scheme: light)" />
+              <img alt="Support on Ko-fi" class="mb-1" height="36" src="" />
+            </picture>
+          </a>
+        </div>
+        <form id="uninstall-form">
+          <input type="hidden" :value="site.relay_url" id="relay-url" hidden="hidden" />
+          <div class="form-check form-switch fs-5">
+            <input class="form-check-input" type="checkbox" role="switch" id="not-used" />
+            <label class="form-check-label text-success-emphasis" for="not-used">Do Not Need or Not Used</label>
+          </div>
+          <div class="form-check form-switch fs-5">
+            <input class="form-check-input" type="checkbox" role="switch" id="not-expected" />
+            <label class="form-check-label text-warning-emphasis" for="not-expected">Does Not Work as Expected</label>
+          </div>
+          <div class="form-check form-switch fs-5">
+            <input class="form-check-input" type="checkbox" role="switch" id="not-working" />
+            <label class="form-check-label text-danger-emphasis" for="not-working">Not Working or Broken</label>
+          </div>
+          <div
+            id="not-working-alert"
+            class="alert alert-warning text-center p-2 mt-2 mb-0 d-none animate__animated animate__pulse"
+          >
+            Please provide a <strong class="">link to the site</strong> that is not functioning.
+          </div>
+          <div class="my-2">
+            <label for="user-response" class="form-label visually-hidden">Uninstall Feedback</label>
+            <textarea
+              class="form-control"
+              id="user-response"
+              rows="4"
+              maxlength="1000"
+              placeholder="Optional Feedback, Bugs, Missing Features, etc..."
+              autofocus
+            ></textarea>
+            <span id="inputCounter" class="float-end label label-default"><span id="input-count">0</span> / 1000</span>
+          </div>
+          <button id="submit-btn" class="btn btn-success w-100" type="submit">
+            Submit Feedback <i class="fa-regular fa-comment-dots ms-2"></i>
+          </button>
+        </form>
+        <div
+          id="error-alert"
+          class="alert alert-danger alert-dismissible fade show text-center mt-3"
+          role="alert"
+          style="display: none"
+        ></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!--<style scoped></style>-->
